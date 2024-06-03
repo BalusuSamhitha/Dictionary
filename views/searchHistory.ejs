@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search History</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('https://t3.ftcdn.net/jpg/03/72/42/02/360_F_372420244_M6e2ejjsJFsnkKjGpldJzBWZGemmDl3P.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #007BFF;
+  text-decoration: none;
+  border: 1px solid #007BFF;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+  </style>
+</head>
+<body>
+  <h1>Search History</h1>
+  <ul>
+    <% searchHistory.forEach(entry => { %>
+      <li><strong>Word:</strong> <%= entry.word %>, <strong>Meaning:</strong> <%= entry.meaning %></li>
+    <% }); %>
+  </ul>
+  <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>

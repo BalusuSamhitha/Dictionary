@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://t4.ftcdn.net/jpg/03/03/32/29/360_F_303322991_j4dMRbdkvaTKU8o50FJichVrYEbvjbWJ.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .dashboard-container {
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: white;
+      margin-bottom: 40px;
+    }
+
+    .section {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 400px;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+
+    .urban-dictionary {
+      animation-name: fadeInLeft;
+    }
+
+    .english-quiz {
+      animation-name: fadeInRight;
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    label {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 20px; /* Added margin */
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #007BFF;
+      text-decoration: none;
+      border: 1px solid #007BFF;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #007BFF;
+      color: #fff;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <h1>Welcome!</h1>
+    
+    <div class="section urban-dictionary">
+      <h2>Urban Dictionary</h2>
+      <form action="/urban-dictionary" method="GET">
+        <label for="word">Enter a word:</label>
+        <input type="text" id="word" name="word" required>
+        <button type="submit">Get Meaning</button>
+        <a href="/search-history">View Search History</a>
+      </form>
+    </div>
+    <div class="section">
+      <h2>QUIZ</h2>
+      <a href="/quiz">play</a>
+    </div>
+  </div>
+</body>
+</html>
